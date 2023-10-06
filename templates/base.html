@@ -3,10 +3,14 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>{% block title %} {% endblock %} - FlaskApp</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
 </head>
 <body>
-    <nav></nav>
+    <nav>
+        <a href="{{ url_for('index') }}">Flask App</a>
+        <a href="">About</a>
+    </nav>
     <div class="content">
         {% block content %} {% endblock %}
     </div>
