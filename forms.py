@@ -1,12 +1,20 @@
 from flask_wtf import FlaskForm
-from wtforms import (StringField, TextAreaField, IntegerField, BooleanField, RadioField)
+from wtforms import (StringField, TextAreaField, IntegerField, BooleanField,
+                     RadioField)
 from wtforms.validators import InputRequired, Length
 
 class CourseForm(FlaskForm):
     title = StringField('Title', validators=[InputRequired(),
                                              Length(min=10, max=100)])
-    description = TextAreaField('Course Description', validators=[InputRequired(), Length(max=200)])
+    description = TextAreaField('Course Description',
+                                validators=[InputRequired(),
+                                            Length(max=200)])
     price = IntegerField('Price', validators=[InputRequired()])
-    level = RadioField('Level', choices=['Beginner', 'Intermediate', 'Advanced'],
+    level = RadioField('Level',
+                       choices=['Beginner', 'Intermediate', 'Advanced'],
                        validators=[InputRequired()])
     available = BooleanField('Available', default='checked')
+
+
+
+# am saying rails not ruby how would I import this API https://fakestoreapi.com/products
