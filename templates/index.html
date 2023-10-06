@@ -64,6 +64,20 @@
         {% endif %}
 
 
+        <!-- level -->
+        <p>
+            {{ form.level.label }}
+            {{ form.level() }}
+        </p>
+
+        {% if form.level.errors %}
+            <ul class="errors">
+                {% for error in form.level.errors %}
+                    <li>{{ error }}</li>
+                {% endfor %}
+            </ul>
+        {% endif %}
+
     </form>
 
 {% endblock %}
